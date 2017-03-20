@@ -71,7 +71,7 @@
                         <!-- Report every unhandled exceptions -->
                         <module>com.makitoo.unhandled.UnhandledModule</module>
                         <!-- Handle NPE Hotpatch -->
-                        <module>com.makitoo.npe.NpeModule</module>
+                        <!--<module>com.makitoo.npe.NpeModule</module>-->
                     </modules>
                 </configuration>
             </plugin>
