@@ -41,7 +41,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User update(User user) {
-        users.put(user.getId(), user);
+        try {
+            users.put(user.getId(), user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return user;
     }
 
