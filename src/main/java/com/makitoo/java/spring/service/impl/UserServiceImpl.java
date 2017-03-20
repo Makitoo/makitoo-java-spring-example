@@ -34,10 +34,7 @@ public class UserServiceImpl implements UserService {
     public User save(User user) {
         String id = UUID.randomUUID().toString();
         user.setId(id);
-
-        // FIXME: lastName can be null
         user.setLastname(user.getLastname().toUpperCase());
-
         users.put(id, user);
         return user;
     }
