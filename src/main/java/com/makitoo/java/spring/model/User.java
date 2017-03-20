@@ -5,10 +5,15 @@ package com.makitoo.java.spring.model;
  */
 public class User {
 
+    private static final String UNKNOW_KEY = "UNKNOW";
     private String id;
     private String lastname;
     private String firstname;
 
+    public User(){
+        // Default value
+        this.id = UNKNOW_KEY;
+    }
 
     public String getId() {
         return id;

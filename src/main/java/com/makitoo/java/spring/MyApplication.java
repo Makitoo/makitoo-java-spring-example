@@ -14,10 +14,10 @@ import org.springframework.context.annotation.ComponentScan;
 public class MyApplication {
 
     public static void main(String[] args) {
-        Makitoo makitoo = com.makitoo.MakitooJava.init(
+        Makitoo makitoo =     com.makitoo.MakitooJava.init(
                 "http://localhost:4567/rest",
-                "kiabidemo-d09657bc-44eb-49da-b9a9-8f119557b2c6",   // Application ID
-                "71rakfdpv33oflg0op7immc85j",                     // Application token
+                "kiabidemo-2c90eb42-fc0a-4dc6-997d-b9c72e0bb7ca",   // Application ID
+                "u574mft59jgocn3cu98qv08fi5",                     // Application token
                 "0.0.1"                                           // Current version of your application
         );
 
