@@ -11,8 +11,6 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-
-        <!--<makitoo.version>0.0.22</makitoo.version>-->
     </properties>
 
     <parent>
@@ -25,56 +23,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.makitoo</groupId>-->
-            <!--<artifactId>makitoo-library-java</artifactId>-->
-            <!--<version>${makitoo.version}</version>-->
-        <!--</dependency>-->
     </dependencies>
-
-    <!--<repositories>-->
-        <!--<repository>-->
-            <!--<id>makitoo</id>-->
-            <!--<url>https://dashboard.makitoo.com/repo</url>-->
-        <!--</repository>-->
-    <!--</repositories>-->
-
-    <!--<pluginRepositories>-->
-        <!--<pluginRepository>-->
-            <!--<id>makitoo</id>-->
-            <!--<url>https://dashboard.makitoo.com/repo</url>-->
-        <!--</pluginRepository>-->
-    <!--</pluginRepositories>-->
 
     <build>
         <plugins>
-            <!--<plugin>-->
-                <!--<groupId>com.makitoo</groupId>-->
-                <!--<artifactId>makitoo-maven-plugin</artifactId>-->
-                <!--<version>${makitoo.version}</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<phase>generate-sources</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>generate</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<compliance>8</compliance>-->
-                    <!--<modules>-->
-                        <!-- Report every error callbacks -->
-                        <!--<module>com.makitoo.callback.CallbackModule</module>-->
-                        <!-- Report every handled exceptions -->
-                        <!--<module>com.makitoo.handled.HandledModule</module>-->
-                        <!-- Report every unhandled exceptions -->
-                        <!--<module>com.makitoo.unhandled.UnhandledModule</module>-->
-                        <!-- Enable Hotpatch on NPE-->
-                        <!--<module>com.makitoo.npe.NpeModule</module>-->
-                    <!--</modules>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
