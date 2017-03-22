@@ -1,7 +1,11 @@
 package com.makitoo.java.spring;
 
 import com.makitoo.Makitoo;
+import com.makitoo.Report;
+import com.makitoo.ReportFilter;
+import com.makitoo.ReportType;
 import com.makitoo.internal.Config;
+import com.makitoo.probes.CollectingProbe;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,22 +25,45 @@ public class MyApplication {
                 "REPLACE"                                           // Current version of your application
         );
 
-//        makitoo.getConfig().setProxy("foobar-proxy.com", 8080);
-//        makitoo.getConfig().setMaxReportPerSecond(20);
-//        makitoo.getConfig().setHttpSocketTimeout(100);
-//        makitoo.getConfig().setMaxPersistedExceptionReport(20);
-//
-//        makitoo.addReportFilters(new ReportFilter() {
-//            @Override
-//            public boolean shouldBuild(Throwable throwable, String s, ReportType reportType) {
-//                return throwable instanceof CustomException;
-//            }
-//
-//            @Override
-//            public boolean shouldSend(Report report) {
-//                return true;
-//            }
-//        });
+        makitoo.getConfig().setProxy("foobar-proxy.com", 8080);
+        makitoo.getConfig().setMaxReportPerSecond(20);
+        makitoo.getConfig().setMaxPersistedExceptionReport(20);
+        makitoo.getConfig().setHttpSocketTimeout(100);
+
+        makitoo.addCollectingProbes(new CollectingProbe() {
+            @Override
+            public void contribute(Report report) {
+                report.report("customer","nicolas");
+            }
+
+            @Override
+            public boolean isEnable(Report report) {
+                return true;
+            }
+
+            @Override
+            public void terminate() {
+
+            }
+
+            @Override
+            public void cleanThread() {
+
+            }
+        });
+
+
+        makitoo.addReportFilters(new ReportFilter() {
+            @Override
+            public boolean shouldBuild(Throwable throwable, String s, ReportType reportType) {
+                return throwable instanceof CustomException;
+            }
+
+            @Override
+            public boolean shouldSend(Report report) {
+                return true;
+            }
+        });
 
 
         Config config = (Config) makitoo.getConfig();
