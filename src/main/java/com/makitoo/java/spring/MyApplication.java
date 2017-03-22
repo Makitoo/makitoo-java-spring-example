@@ -33,7 +33,7 @@ public class MyApplication {
         makitoo.addCollectingProbes(new CollectingProbeAdapter() {
             @Override
             public void contribute(Report report) {
-                report.report("customer","nicolas");
+                report.reportCustomProperty("customer","nicolas");
             }
         });
 
