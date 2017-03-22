@@ -5,7 +5,7 @@ import com.makitoo.Report;
 import com.makitoo.ReportFilter;
 import com.makitoo.ReportType;
 import com.makitoo.internal.Config;
-import com.makitoo.probes.CollectingProbe;
+import com.makitoo.internal.probes.CollectingProbeAdapter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -30,25 +30,10 @@ public class MyApplication {
         makitoo.getConfig().setMaxPersistedExceptionReport(20);
         makitoo.getConfig().setHttpSocketTimeout(100);
 
-        makitoo.addCollectingProbes(new CollectingProbe() {
+        makitoo.addCollectingProbes(new CollectingProbeAdapter() {
             @Override
             public void contribute(Report report) {
                 report.report("customer","nicolas");
-            }
-
-            @Override
-            public boolean isEnable(Report report) {
-                return true;
-            }
-
-            @Override
-            public void terminate() {
-
-            }
-
-            @Override
-            public void cleanThread() {
-
             }
         });
 
